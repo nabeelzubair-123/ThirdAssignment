@@ -1,0 +1,48 @@
+<html>
+
+<body>
+    <h2>Student's Grade Calculator
+    </h2>
+    <input type="text" value="" id="a" />
+    <br />
+    <input type="text" value="" id="b" />
+
+    <div class="app-form-group showdata">
+        <p id="showData"> </p>
+    </div>
+
+    <script>
+        function percentage(a, b) {
+            var num1 = parseInt(a);
+            var num2 = parseInt(b);
+            var percentage = num1 / num2 * 100;
+
+            if (percentage <= 100 && percentage >= 80) {
+                grades = 'A1';
+            } else if (percentage <= 79 && percentage >= 70) {
+                grades = 'A';
+            } else if (percentage <= 69 && percentage >= 60) {
+                grades = 'B';
+            } else if (percentage <= 59 && percentage >= 50) {
+                grades = 'C';
+            } else {
+                grades = 'D';
+            }
+
+            if (percentage >= 39.5) {
+                document.getElementById('showData').innerHTML = ` Percentage is ${percentage}%. <br> Your grade is ${grades}. <br> You are Pass. `
+            }
+            else {
+                document.getElementById('showData').innerHTML = ` Percentage is ${percentage}%. <br> Your grade is ${grades}. <br> You are Fail. `
+            }
+        }
+
+    </script>
+
+
+    <input type="button" name="Button" value="Calculator"
+        onclick='percentage(document.getElementById("a").value,document.getElementById("b").value)' />
+
+</body>
+
+</html>
